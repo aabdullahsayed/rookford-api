@@ -20,13 +20,14 @@ public class AuthController : ControllerBase
     }
 
     [HttpPost]
-    public IActionResult Create(User user)
+    public async Task <IActionResult> Create(User user)
     {
         _context.Add(user);
 
-        _context.SaveChanges();
+       await _context.SaveChangesAsync();
 
-        return Ok(_context.users);
+       return CreatedAtAction(nameof(Read), new { id = user.ID }, user);
+
     }
 
     [HttpGet]
