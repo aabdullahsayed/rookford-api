@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using Rookford.Model;
+using Rookford.Models;
 
 namespace Rookford.Data;
 

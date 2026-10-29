@@ -1,4 +1,4 @@
-namespace Rookford.Model;
+namespace Rookford.Models;
 
 public class User{
     public int ID {get; set;}
