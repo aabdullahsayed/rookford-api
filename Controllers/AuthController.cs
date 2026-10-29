@@ -30,9 +30,14 @@ public class AuthController : ControllerBase
     }
 
     [HttpGet]
-    public IActionResult Read(string email)
+    public IActionResult Read(int id)
     {
-        var user = _context.users.Find(email);
+        var user = _context.users.Find(id);
+
+        if (user == null)
+        {
+            return NotFound("The User is not Available");
+        }
 
         return Ok(user.Name);
     }
