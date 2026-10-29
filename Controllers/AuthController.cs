@@ -24,6 +24,8 @@ public class AuthController : ControllerBase
     {
         _context.Add(user);
 
+        _context.SaveChanges();
+
         return Ok(_context.users);
     }
 }
