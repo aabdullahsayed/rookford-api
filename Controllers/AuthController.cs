@@ -28,4 +28,12 @@ public class AuthController : ControllerBase
 
         return Ok(_context.users);
     }
+
+    [HttpGet]
+    public IActionResult Read(string email)
+    {
+        var user = _context.users.Find(email);
+
+        return Ok(user.Name);
+    }
 }
