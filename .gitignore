@@ -1,0 +1,14 @@
+# Build files
+bin/
+obj/
+
+# Environment variables
+.env
+.env.*
+
+# App settings with secrets
+appsettings.Development.json
+appsettings.Production.json
+
+# Logs
+*.log
