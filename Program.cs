@@ -2,10 +2,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-
-
 var app = builder.Build();
 
 
-app.Run();
+app.MapGet("/", () => "Rookford Server Side");
 
+
+app.Run();
