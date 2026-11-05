@@ -31,9 +31,9 @@ public class AuthController : ControllerBase
     }
 
     [HttpGet]
-    public IActionResult Read()
+    public async Task <IActionResult> Read()
     {
-        var user = _context.users;
+        var user = _context.users.ToListAsync();
 
         if (user == null)
         {
