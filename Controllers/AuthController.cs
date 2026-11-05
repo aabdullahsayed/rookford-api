@@ -31,15 +31,16 @@ public class AuthController : ControllerBase
     }
 
     [HttpGet]
-    public IActionResult Read(int id)
+    public IActionResult Read()
     {
-        var user = _context.users.Find(id);
+        var user = _context.users;
 
         if (user == null)
         {
-            return NotFound("The User is not Available");
+            return NotFound("No users");
         }
 
-        return Ok(user.Name);
+        return Ok(user);
     }
+    
 }
